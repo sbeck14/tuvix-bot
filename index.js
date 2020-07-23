@@ -76,6 +76,8 @@ module.exports = app => {
       return;
     }
 
+    app.log(`New "${PR_LABEL}" labeled PR detected!`)
+
     const repo = payload.repository.full_name;
     const repoURL = payload.repository.html_url;
     const { pull_request, sender } = payload;
@@ -124,8 +126,9 @@ module.exports = app => {
       const { 
         html_url: prURL, number: prNumber, merged_at: mergedAt, merged_by, base: { ref: baseRef }
       } = pull_request;
-      
 
+      app.log(`"${PR_LABEL}" labeled PR #${prNumber} in ${repo} was merged!`)
+      
       sendSlackMessage({
         text: "",
         attachments: [
@@ -163,6 +166,8 @@ module.exports = app => {
       } = pull_request;
 
       const { user, submitted_at: reviewSubmittedAt } = review;
+
+      app.log(`"${PR_LABEL}" labeled PR #${prNumber} in ${repo} was approved by ${user.login}!`)
 
       sendSlackMessage({
         text: "",
