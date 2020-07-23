@@ -1,0 +1,39 @@
+{
+  "name": "tuvix-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tuvix Bot",
+  "author": "Sam Beckett <sbeck14@me.com>",
+  "license": "ISC",
+  "repository": "https://github.com/sbeck14/tuvix-bot.git",
+  "homepage": "https://github.com/sbeck14/tuvix-bot",
+  "bugs": "https://github.com/sbeck14/tuvix-bot/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./index.js"
+  },
+  "dependencies": {
+    "@slack/web-api": "^5.11.0",
+    "probot": "^9.5.3"
+  },
+  "devDependencies": {
+    "nock": "^12.0.0",
+    "nodemon": "^2.0.0",
+    "smee-client": "^1.1.0"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  }
+}
