@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@slack/web-api": "^5.11.0",
-    "probot": "^10.8.0"
+    "probot": "^12.2.9"
   },
   "devDependencies": {
     "eslint": "^7.9.0",
